@@ -2,7 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     defaultValues: selectedUser,
   });
 
@@ -22,8 +26,11 @@ const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
             type="text"
             id="firstNameId"
             className="p-2 rounded-lg border-2 border-gray-300"
-            {...register('first_name')}
+            {...register('first_name', { required: true })}
           />
+          {errors.first_name && (
+            <span className="text-red-500 text-sm">This field is required</span>
+          )}
         </div>
         <div className="flex flex-col">
           <label htmlFor="lastNameId" className="text-lg font-medium mb-2">
@@ -33,8 +40,11 @@ const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
             type="text"
             id="lastNameId"
             className="p-2 rounded-lg border-2 border-gray-300"
-            {...register('last_name')}
+            {...register('last_name', { required: true })}
           />
+          {errors.last_name && (
+            <span className="text-red-500 text-sm">This field is required</span>
+          )}
         </div>
         <div className="flex flex-col">
           <label htmlFor="emailId" className="text-lg font-medium mb-2">
@@ -44,8 +54,11 @@ const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
             type="email"
             id="emailId"
             className="p-2 rounded-lg border-2 border-gray-300"
-            {...register('email')}
+            {...register('email', { required: true })}
           />
+          {errors.email && (
+            <span className="text-red-500 text-sm">This field is required</span>
+          )}
         </div>
         <div className="flex flex-col">
           <label htmlFor="passwordId" className="text-lg font-medium mb-2">
@@ -55,8 +68,11 @@ const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
             type="password"
             id="passwordId"
             className="p-2 rounded-lg border-2 border-gray-300"
-            {...register('password')}
+            {...register('password', { required: true })}
           />
+          {errors.password && (
+            <span className="text-red-500 text-sm">This field is required</span>
+          )}
         </div>
         <div className="flex flex-col">
           <label htmlFor="birthdayId" className="text-lg font-medium mb-2">
@@ -66,8 +82,11 @@ const EditUserForm = ({ selectedUser, editUserHandler, onCloseForm }) => {
             type="date"
             id="birthdayId"
             className="p-2 rounded-lg border-2 border-gray-300"
-            {...register('birthday')}
+            {...register('birthday', { required: true })}
           />
+          {errors.birthday && (
+            <span className="text-red-500 text-sm">This field is required</span>
+          )}
         </div>
         <div className="flex justify-center items-center">
           <button

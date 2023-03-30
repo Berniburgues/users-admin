@@ -1,7 +1,7 @@
 const UserCard = (props) => {
   const { user, onDeleteUser, onEditUser } = props;
   return (
-    <article className="shadow-lg rounded-3xl w-60 sm:w-72 mx-1 mb-8">
+    <article className="shadow-lg rounded-3xl w-60 sm:w-72 mx-auto mb-8">
       <div className=" bg-slate-200 rounded-t-2xl p-4">
         <h2 className="text-center font-bold text-xl mb-3 font-mono">
           {user.first_name} {user.last_name}

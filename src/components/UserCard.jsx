@@ -8,6 +8,10 @@ const UserCard = (props) => {
         </h2>
         <ul className="text-sm">
           <li className="mb-2">
+            <span className="font-semibold text-blue-600 text-base">ID </span>
+            <p className="text-base">{user.id}</p>
+          </li>
+          <li className="mb-2">
             <span className="font-semibold text-blue-600 text-base">EMAIL </span>
             <br />
             <p className="text-base">{user.email}</p>

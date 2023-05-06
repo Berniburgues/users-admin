@@ -22,11 +22,7 @@ const UserCard = (props) => {
       <div className="bg-gray-100 rounded-b-2xl px-4 py-2 flex justify-end">
         <button
           className="bg-red-500 hover:bg-red-600 border border-red-700 text-white py-1 px-3 rounded-full mr-2"
-          onClick={() => {
-            if (window.confirm('Are you sure you want to delete this user?')) {
-              onDeleteUser(user.id);
-            }
-          }}
+          onClick={() => onDeleteUser(user.id)}
         >
           <i className="fa-solid fa-trash text-xs"></i>
         </button>

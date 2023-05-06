@@ -7,6 +7,7 @@ import Modal from './components/Modal';
 import { useForm } from 'react-hook-form';
 import NewUserForm from './components/NewUserForm';
 import EditUserForm from './components/EditUserForm';
+import UserSearch from './components/UserSearch';
 import { getUsers, createUser, updateUser, deleteUser } from './services';
 
 function App() {
@@ -74,9 +75,10 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App flex flex-col">
       <ToastContainer />
       <NavBar actionAddBtn={handleClick} />
+      <UserSearch />
       <UserList
         users={users}
         onEditUser={(user) => {
